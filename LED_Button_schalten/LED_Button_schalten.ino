@@ -1,5 +1,5 @@
 const int buttonPin = D8;    // Button - auf D8, 3v auf S
-const int redPin = D0;       // LED - auf GND, G auf D0
+const int redPin = D0;       // LED - auf G, LED G auf D0
 const int bluePin = D1;     // LED B auf D1
 const int greenPin = D2;   // LED R auf D2 , beschriftung auf LED scheint falsch zu sein...
         
@@ -14,8 +14,8 @@ void setup() {
   pinMode(greenPin, OUTPUT);
   Serial.begin(115200);         // Geschwindigkeit festlegen, optional, notwendig um Serial.print auszulesen
 }
+
 void loop() {
- 
   buttonStatus = digitalRead(buttonPin); // Status des Buttons wird ausgelesen
 
  if (buttonStatus != letzterButtonStatus) {  // wenn der Status des Buttons nicht mit dem gespeicherten Wert
@@ -46,23 +46,23 @@ void loop() {
     digitalWrite(redPin, LOW);
     digitalWrite(bluePin, LOW);
     digitalWrite(greenPin, LOW);  
-      }else if (zaehler == 5) {          // Wenn Zähler = 4 -> LED ist aus
+      }else if (zaehler == 5) {          // Wenn Zähler = 5 -> LED ist gelb
     digitalWrite(redPin, HIGH);
     digitalWrite(bluePin, HIGH);
     digitalWrite(greenPin, LOW);  
-      }else if (zaehler == 6) {          // Wenn Zähler = 4 -> LED ist aus
+      }else if (zaehler == 6) {          // Wenn Zähler = 6 -> LED ist pink
     digitalWrite(redPin, HIGH);
     digitalWrite(bluePin, LOW);
     digitalWrite(greenPin, HIGH);  
-      }else if (zaehler == 7) {          // Wenn Zähler = 4 -> LED ist aus
+      }else if (zaehler == 7) {          // Wenn Zähler = 7 -> LED ist hellblau
     digitalWrite(redPin, LOW);
     digitalWrite(bluePin, HIGH);
     digitalWrite(greenPin, HIGH);  
-      } else if (zaehler == 8) {          // Wenn Zähler = 4 -> LED ist aus
+      } else if (zaehler == 8) {          // Wenn Zähler = 8 -> LED ist weiß
     digitalWrite(redPin, HIGH);
     digitalWrite(bluePin, HIGH);
     digitalWrite(greenPin, HIGH);  
-      }else if (zaehler == 9) {          // Wenn Zähler = 4 -> LED ist aus
+      }else if (zaehler == 9) {          // Wenn Zähler = 9 -> LED ist aus
     digitalWrite(redPin, LOW);
     digitalWrite(bluePin, LOW);
     digitalWrite(greenPin, LOW); 
